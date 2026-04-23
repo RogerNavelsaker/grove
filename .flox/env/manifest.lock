@@ -1,0 +1,11 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "schema-version": "1.10.0",
+    "hook": {
+      "on-activate": "  # Guard: Only run in the physical meta-repo directory\n  if [ \"$(pwd -P)\" != \"/home/rona/Repositories/RogerNavelsaker/grove\" ]; then\n    return\n  fi\n\n  # Symlink grove-* repos, excluding *-rust and self, dropping prefix\n  for r in ../grove-*; do\n    if [ -d \"$r\" ] && [[ \"$(basename \"$r\")\" != *-rust ]] && [ \"$(basename \"$r\")\" != \"grove\" ]; then\n      base=$(basename \"$r\")\n      name=${base#grove-}\n      ln -snf \"$r\" \"$name\"\n    fi\n  done\n"
+    },
+    "options": {}
+  },
+  "packages": []
+}

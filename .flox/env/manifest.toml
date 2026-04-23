@@ -1,0 +1,22 @@
+schema-version = "1.10.0"
+
+[install]
+
+[vars]
+
+[hook]
+on-activate = '''
+  # Guard: Only run in the physical meta-repo directory
+  if [ "$(pwd -P)" != "/home/rona/Repositories/RogerNavelsaker/grove" ]; then
+    return
+  fi
+
+  # Symlink grove-* repos, excluding *-rust and self, dropping prefix
+  for r in ../grove-*; do
+    if [ -d "$r" ] && [[ "$(basename "$r")" != *-rust ]] && [ "$(basename "$r")" != "grove" ]; then
+      base=$(basename "$r")
+      name=${base#grove-}
+      ln -snf "$r" "$name"
+    fi
+  done
+'''

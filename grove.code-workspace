@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{ "path": "." },
+		{ "path": "grove" },
+		{ "path": "grove-overstory" },
+		{ "path": "grove-sapling" },
+		{ "path": "grove-seeds" },
+		{ "path": "grove-mulch" },
+		{ "path": "grove-canopy" },
+		{ "path": "grove-mycelium" },
+		{ "path": "grove-greenhouse" },
+		{ "path": "grove-kotadb" }
+	],
+	"settings": {}
+}

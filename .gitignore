@@ -5,3 +5,7 @@ overstory/
 sapling/
 seeds/
 .DS_Store
+
+# Meta-repo symlinks
+/grove-*
+!/grove-*.code-workspace
